@@ -16,7 +16,7 @@ pwr$Date <- NULL
 names(pwr)[1] <- "datetime"
 
 #open image device
-png(file="plot3.png", width=480, height=480, units="px", bg="white") # Open image device
+png(file="plot3.png", width=480, height=480, bg="white")  # Open image device
 
 #plot sub meters
 plot(pwr$datetime, pwr$Sub_metering_1, type="l",

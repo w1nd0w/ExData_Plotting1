@@ -16,7 +16,7 @@ pwr$Date <- NULL
 names(pwr)[1] <- "datetime"
 
 #open image device
-png(file="plot4.png", width=480, height=480, units="px", bg="white") # Open image device
+png(file="plot4.png", width=480, height=480, bg="white")  # Open image device
 
 #prepare for plot x 4
 op <- par(mfrow = c(2, 2))

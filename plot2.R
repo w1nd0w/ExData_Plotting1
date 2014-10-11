@@ -15,10 +15,13 @@ pwr$Time <- strptime(paste(pwr$Date,pwr$Time), "%d/%m/%Y %H:%M:%S")
 pwr$Date <- NULL
 names(pwr)[1] <- "datetime"
 
+#open image device
+png(file="plot2.png", width=480, height=480) # Open image device
+
 #plot active power
 plot(pwr$datetime, pwr$Global_active_power, type="l",
      ylab="Global Active Power (kilowatts)", xlab="")
 
 #copy to image
-dev.copy(png, file = "plot2.png")
+#dev.copy(png, file = "plot2.png")
 dev.off()      # close

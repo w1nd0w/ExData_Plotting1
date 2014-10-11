@@ -15,7 +15,8 @@ pwr$Time <- strptime(paste(pwr$Date,pwr$Time), "%d/%m/%Y %H:%M:%S")
 pwr$Date <- NULL
 names(pwr)[1] <- "datetime"
 
-#png(file="plot1.png", width=480, height=480, units="px", bg="white") # Open image device
+#open image device
+png(file="plot1.png", width=480, height=480) # Open image device
 
 #plot
 hist(pwr$Global_active_power, col="red",
@@ -23,6 +24,6 @@ hist(pwr$Global_active_power, col="red",
      xlab="Global Active Power (kilowatts)")
 
 #copy to image
-dev.copy(png, file = "plot1.png")
+#dev.copy(png, file = "plot1.png")
 dev.off()      # close
 
