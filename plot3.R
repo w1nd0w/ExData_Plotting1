@@ -15,6 +15,9 @@ pwr$Time <- strptime(paste(pwr$Date,pwr$Time), "%d/%m/%Y %H:%M:%S")
 pwr$Date <- NULL
 names(pwr)[1] <- "datetime"
 
+#open image device
+png(file="plot3.png", width=480, height=480, units="px", bg="white") # Open image device
+
 #plot sub meters
 plot(pwr$datetime, pwr$Sub_metering_1, type="l",
      ylab="Energy sub metering", xlab="")
@@ -23,6 +26,6 @@ lines(pwr$datetime, pwr$Sub_metering_3, col="blue")
 legend("topright", col=c("black","red","blue"), lty=1, cex=0.8,
        c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
 
-#copy to image
-dev.copy(png, file = "plot3.png")
+#copy to image?
+#dev.copy(png, file = "plot3.png")
 dev.off()      # close
